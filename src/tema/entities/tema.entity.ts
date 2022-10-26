@@ -1,6 +1,6 @@
 import { IsNotEmpty } from "class-validator";
-import { Postagem } from "src/postagem/entities/postagem.entity";
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Postagem } from "../../postagem/entities/postagem.entity";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity({name: "tb_temas"})
 export class Tema {
@@ -15,7 +15,7 @@ export class Tema {
     @UpdateDateColumn()
     data: Date;
 
-    @ManyToOne(() =>Postagem, (postagem) => postagem.tema, )
+    @OneToMany(() =>Postagem, (postagem) => postagem.tema, )
         postagem:Postagem [];
 
 

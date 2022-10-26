@@ -29,7 +29,7 @@ __decorate([
     __metadata("design:type", Date)
 ], Tema.prototype, "data", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => postagem_entity_1.Postagem, (postagem) => postagem.tema),
+    (0, typeorm_1.OneToMany)(() => postagem_entity_1.Postagem, (postagem) => postagem.tema),
     __metadata("design:type", Array)
 ], Tema.prototype, "postagem", void 0);
 Tema = __decorate([
