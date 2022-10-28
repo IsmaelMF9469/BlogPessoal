@@ -13,15 +13,18 @@ exports.Tema = void 0;
 const class_validator_1 = require("class-validator");
 const postagem_entity_1 = require("../../postagem/entities/postagem.entity");
 const typeorm_1 = require("typeorm");
+const swagger_1 = require("@nestjs/swagger");
 let Tema = class Tema {
 };
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
+    (0, swagger_1.ApiProperty)(),
     __metadata("design:type", Number)
 ], Tema.prototype, "id", void 0);
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     (0, typeorm_1.Column)({ length: 255, nullable: false }),
+    (0, swagger_1.ApiProperty)(),
     __metadata("design:type", String)
 ], Tema.prototype, "descri\u00E7\u00E3o", void 0);
 __decorate([
@@ -29,6 +32,7 @@ __decorate([
     __metadata("design:type", Date)
 ], Tema.prototype, "data", void 0);
 __decorate([
+    (0, swagger_1.ApiProperty)(),
     (0, typeorm_1.OneToMany)(() => postagem_entity_1.Postagem, (postagem) => postagem.tema),
     __metadata("design:type", Array)
 ], Tema.prototype, "postagem", void 0);

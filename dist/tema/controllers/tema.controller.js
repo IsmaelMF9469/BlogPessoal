@@ -14,6 +14,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TemaController = void 0;
 const common_1 = require("@nestjs/common");
+const decorators_1 = require("@nestjs/swagger/dist/decorators");
 const jwt_auth_guard_1 = require("../../auth/guard/jwt.auth.guard");
 const tema_entity_1 = require("../entities/tema.entity");
 const tema_services_1 = require("../services/tema.services");
@@ -88,8 +89,10 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TemaController.prototype, "delete", null);
 TemaController = __decorate([
+    (0, decorators_1.ApiTags)('Tema'),
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     (0, common_1.Controller)("/tema"),
+    (0, decorators_1.ApiBearerAuth)(),
     __metadata("design:paramtypes", [tema_services_1.TemaService])
 ], TemaController);
 exports.TemaController = TemaController;

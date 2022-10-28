@@ -14,20 +14,24 @@ const class_validator_1 = require("class-validator");
 const tema_entity_1 = require("../../tema/entities/tema.entity");
 const usuario_entity_1 = require("../../usuario/entities/usuario.entity");
 const typeorm_1 = require("typeorm");
+const swagger_1 = require("@nestjs/swagger");
 let Postagem = class Postagem {
 };
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
+    (0, swagger_1.ApiProperty)(),
     __metadata("design:type", Number)
 ], Postagem.prototype, "id", void 0);
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     (0, typeorm_1.Column)({ length: 100, nullable: false }),
+    (0, swagger_1.ApiProperty)(),
     __metadata("design:type", String)
 ], Postagem.prototype, "titulo", void 0);
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     (0, typeorm_1.Column)({ length: 1000, nullable: false }),
+    (0, swagger_1.ApiProperty)(),
     __metadata("design:type", String)
 ], Postagem.prototype, "texto", void 0);
 __decorate([
@@ -35,12 +39,14 @@ __decorate([
     __metadata("design:type", Date)
 ], Postagem.prototype, "data", void 0);
 __decorate([
+    (0, swagger_1.ApiProperty)({ type: () => tema_entity_1.Tema }),
     (0, typeorm_1.ManyToOne)(() => tema_entity_1.Tema, (tema) => tema.postagem, {
         onDelete: "CASCADE"
     }),
     __metadata("design:type", tema_entity_1.Tema)
 ], Postagem.prototype, "tema", void 0);
 __decorate([
+    (0, swagger_1.ApiProperty)({ type: () => usuario_entity_1.Usuario }),
     (0, typeorm_1.ManyToOne)(() => usuario_entity_1.Usuario, (usuario) => usuario.postagem, {
         onDelete: "CASCADE"
     }),

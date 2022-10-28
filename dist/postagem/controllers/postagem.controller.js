@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PostagemController = void 0;
 const common_1 = require("@nestjs/common");
 const decorators_1 = require("@nestjs/common/decorators");
+const decorators_2 = require("@nestjs/swagger/dist/decorators");
 const jwt_auth_guard_1 = require("../../auth/guard/jwt.auth.guard");
 const postagem_entity_1 = require("../entities/postagem.entity");
 const postagem_services_1 = require("../services/postagem.services");
@@ -89,8 +90,10 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], PostagemController.prototype, "delete", null);
 PostagemController = __decorate([
+    (0, decorators_2.ApiTags)('Postagem'),
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     (0, common_1.Controller)('/postagens'),
+    (0, decorators_2.ApiBearerAuth)(),
     __metadata("design:paramtypes", [postagem_services_1.PostagemServices])
 ], PostagemController);
 exports.PostagemController = PostagemController;

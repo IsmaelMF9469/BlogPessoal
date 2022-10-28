@@ -1,12 +1,14 @@
 import { UseGuards, Body, Controller, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post } from "@nestjs/common";
 import { Delete, Put } from "@nestjs/common/decorators";
+import { ApiBearerAuth, ApiTags } from "@nestjs/swagger/dist/decorators";
 import { JwtAuthGuard } from "../../auth/guard/jwt.auth.guard";
 import { Postagem } from "../entities/postagem.entity";
 import { PostagemServices } from "../services/postagem.services";
 
-
+@ApiTags('Postagem')
 @UseGuards(JwtAuthGuard)
 @Controller('/postagens')
+@ApiBearerAuth()
 export class PostagemController {
     constructor (private readonly PostagemServices: PostagemServices){}
 

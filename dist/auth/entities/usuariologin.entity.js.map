@@ -1,1 +1,1 @@
-{"version":3,"file":"usuariologin.entity.js","sourceRoot":"","sources":["../../../src/auth/entities/usuariologin.entity.ts"],"names":[],"mappings":";;;AAAA,MAAa,YAAY;CAKxB;AALD,oCAKC"}
+{"version":3,"file":"usuariologin.entity.js","sourceRoot":"","sources":["../../../src/auth/entities/usuariologin.entity.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,6CAA8C;AAE9C,MAAa,YAAY;CAOxB;AALG;IAAC,IAAA,qBAAW,GAAE;;6CACS;AAEvB;IAAC,IAAA,qBAAW,GAAE;;2CACO;AANzB,oCAOC"}
